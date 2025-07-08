@@ -3,6 +3,7 @@
  A base de dados utilizada foi a série histórica com o
  saldo total de admissões e desligamentos no município do Rio de Janeiro, mais
  especificamente no setor do comércio, desde janeiro de 2016 a dezembro de 2023.
+ 
  ![image](https://github.com/user-attachments/assets/16f24084-7f4d-4103-9d50-4a4f2da5ab27)
 
 Visualmente, é possível identificar uma repetição de ciclos, ou seja, o fenômeno
@@ -18,6 +19,7 @@ Visualmente, é possível identificar uma repetição de ciclos, ou seja, o fen�
  foi optado pelo recorte do ano de 2020. Tal decisão, apesar de diminuir a amostra, torna a
  análise mais realista. Esse recorte foi crucial para a modelagem utilizando os modelos
  autoregressivos. A Figura abaixo contém a série com o **recorte:**
+ 
 ![image](https://github.com/user-attachments/assets/f44f5db6-3c33-4e07-b4e0-5f2e02a10d81)
 
 
@@ -41,6 +43,7 @@ Visualmente, é possível identificar uma repetição de ciclos, ou seja, o fen�
  + (1-α)(Nt-1 + Tt-1). Para o primeiro valor de Tt foi utilizado 0, daí em diante foi utilizado a
  equação Tt = ß*(Nt- Nt-1) + (1-ß)*Tt-1. Foi feita uma previsão para o período de janeiro de
  2024 tendo como resultado um saldo negativo de-5522.
+   
    ![image](https://github.com/user-attachments/assets/47fed5d5-5535-485e-b88c-d8a7a6347843)
 
 
@@ -58,6 +61,7 @@ Visualmente, é possível identificar uma repetição de ciclos, ou seja, o fen�
  Primeiramente, foi realizada a análise dos lags da FAC (Função de Autocorrelação Parcial) e
  FACP (Função de Autocorrelação Parcial) para analisar o comportamento de dependência
  serial.
+ 
  ![image](https://github.com/user-attachments/assets/f2af188a-50f3-464e-87b2-54df6ef8f812)
 
   Logo após, foi feito o teste de Fuller para estacionariedade, sendo necessário saber se
@@ -68,6 +72,7 @@ Visualmente, é possível identificar uma repetição de ciclos, ou seja, o fen�
  utilizado o modelo ARIMA(1,1,3). Com base nisso, foi feita uma previsão para 5 períodos no
  futuro, o que equivale no momento de escrita deste artigo aos meses de janeiro, fevereiro,
  março, abril e maio do ano de 2024. Para medir o desempenho do modelo foi analisado o erro percentual médio absoluto nos últimos 5 períodos de 2023. A Figura 5 contém a análise feita:
+ 
  ![image](https://github.com/user-attachments/assets/f3ff5615-0c22-4d11-ba6c-08048bbd1cbd)
 
 
